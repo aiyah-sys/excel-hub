@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xcel Hub Training Services</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #0a3b1e;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 0 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 24px;
+            margin-left: 0.75rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: ;
+        }
+
+        .logo img {
+            width: 300px;
+            height: 75px;
+            object-fit: contain;
+            margin-left: 0.75rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 2rem 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ebfaf1, #0a3b1e);
+            color: white;
+            padding: 120px 3rem 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .hero-content {
+            flex: 1 1 420px;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-image {
+            flex: 1 1 320px;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 3rem;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .about-grid div {
+            flex: 1 1 320px;
+            min-width: 280px;
+        }
+
+        .about-grid img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .stats {
+            background-color: #2c3e50;
+            margin: 0 auto;
+            color: white;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .stats .stat-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            margin: 2rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        .clients {
+            text-align: center;
+        }
+
+        .client-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .client-logos img {
+            height: 60px;
+            opacity: 0.7;
+        }
+
+        .trainer {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .trainer img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem 0;
+        }
+
+        .training {
+            text-align: center;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .training-card {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a3b1e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Auth Forms - Hidden by default */
+        .auth-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .auth-container.show {
+            display: flex;
+        }
+
+        .auth-form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .auth-form .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .auth-form .header img {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        input {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #dcdde1;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .toggle-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f4f7f6;
+            z-index: 1500;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard.show {
+            display: flex;
+        }
+
+        .dashboard-content {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png.png" alt="Xcel Hub logo">
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#training">Training</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="showAuth('login')">Login</a></li>
+                <li><a href="#" onclick="showAuth('signup')">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Path to Future-Ready Skills Starts Here</h1>
+            <p>Flexible, real-world digital training that empowers individuals and businesses to learn with confidence.</p>
+            <a href="#about" class="btn">Learn More</a>
+            <a href="#" onclick="showAuth('signup')" class="btn">Get Started</a>
+        </div>
+        <div class="hero-image">
+            <img src="download (1).jpg" alt="Training session">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>Discover Xcel Hub Training Services</h2>
+        <div class="about-grid">
+            <div>
+                <p>Based in Cubao, Quezon City, Philippines, we are a dedicated tutorial center committed to building digital literacy and job-ready computer skills. Since 2018, we have empowered beginners, freelancers, jobseekers, and professionals through hands-on training in Excel, Google Sheets, Data Management, and Data Analysis.</p>
+                <p>With small class sizes of up to six students, we ensure focused, personalized learning tailored to your goals. We offer flexible schedules, online and face-to-face sessions, and official certifications as an Authorized Certiport Testing Center — helping you succeed in today's digital workplace.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Students in training">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-grid">
+            <div class="stat-item">
+                <div class="stat-number">30k+</div>
+                <p>Trained</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">75+</div>
+                <p>Cities Across Philippines</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">300+</div>
+                <p>Companies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <h2>Our Trusted Clients</h2>
+        <p>Providing nationwide professional training in Microsoft Office and essential computer skills.</p>
+        <div class="client-logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Seal_of_the_Department_of_Environment_and_Natural_Resources.svg/1280px-Seal_of_the_Department_of_Environment_and_Natural_Resources.svg.png" alt="DENR">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Seal_of_the_Philippine_Marine_Corps.svg" alt="Philippine Marine Corps">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/DICT-Logo-Final-2-300x153.png" alt="DICT">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Philippine_Health_Insurance_Corporation_%28PhilHealth%29.svg" alt="PhilHealth">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Seal_of_the_Philippine_Navy.png" alt="Philippine Navy">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/GMA_Network_Logo_Vector.svg/1280px-GMA_Network_Logo_Vector.svg.png" alt="GMA Network">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/San_Miguel_Corporation_logo.svg" alt="San Miguel">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Unilever.svg/1280px-Unilever.svg.png" alt="Unilever">
+        </div>
+    </section>
+
+
+    <!-- Training Categories -->
+    <section id="training" class="training">
+        <h2>Training Categories</h2>
+        <p>Discover the right skills for your journey. Whether you're starting from scratch or leveling up your expertise, our programs will guide you step by step.</p>
+        <div class="training-grid">
+            <div class="training-card">
+                <h3>Computer Literacy Level 1</h3>
+                <p>Basics of typing, mouse use, email, and simple data entry.</p>
+            </div>
+            <div class="training-card">
+                <h3>Excel for Beginners</h3>
+                <p>Getting started with formulas, structuring datasets, and pivot tables.</p>
+            </div>
+            <div class="training-card">
+                <h3>Excel Formulas & AI Tools</h3>
+                <p>From basic to advanced formulas, plus modern AI-powered features.</p>
+            </div>
+            <div class="training-card">
+                <h3>Computer Literacy Level 2</h3>
+                <p>Intro to Canva, Google Docs, and Sheets for documentation and design.</p>
+            </div>
+            <div class="training-card">
+                <h3>Excel for Daily Users</h3>
+                <p>Advanced dataset management, pivot tables, and data analysis.</p>
+            </div>
+            <div class="training-card">
+                <h3>Google Sheets Mastery</h3>
+                <p>Data entry, management, pivot tables, and reporting in Sheets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h2>Empower your skill today!</h2>
+            <p>Learn from experts. Strengthen your digital skills. Unlock new opportunities.</p>
+            <p>🕒 Office Hours: Mon - Sat | 09:00 AM - 06:00 PM</p>
+            <p>📍 Unit 2F Saint Martin Building West Point St. Cubao, Quezon City Metro Manila 1102</p>
+            <p>📞 0992-454-7586 | ✉️ marketing@xcelhubtrainingservices.com</p>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="auth-container" class="auth-container">
+        <div class="auth-form">
+            <button class="close" onclick="hideAuth()">&times;</button>
+            <div class="header">
+                <img src="Logo horizontal (1).png" alt="Xcel Hub logo">
+                <p id="sub-text">Training Services Portal</p>
+            </div>
+
+            <form id="login-form">
+                <label for="login-email">Email Address</label>
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+                
+                <label for="login-pass">Password</label>
+                <input type="password" id="login-pass" placeholder="Enter password" required>
+                
+                <button type="submit">Log In</button>
+                <div class="toggle-link">
+                    Don't have an account? <a href="#" onclick="toggleForm('signup')">Sign Up here</a>
+                </div>
+            </form>
+
+            <form id="signup-form" class="hidden">
+                <label for="signup-name">Full Name</label>
+                <input type="text" id="signup-name" placeholder="Enter full name" required>
+
+                <label for="signup-email">Email Address</label>
+                <input type="email" id="signup-email" placeholder="Create email" required>
+                
+                <label for="signup-pass">Password</label>
+                <input type="password" id="signup-pass" placeholder="Create password" required>
+                
+                <button type="submit" style="background-color: #3498db;">Create Account</button>
+                <div class="toggle-link">
+                    Already registered? <a href="#" onclick="toggleForm('login')">Log In here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <div class="dashboard-content">
+            <h1>Welcome to Excel Hub!</h1>
+            <p>Your training courses will appear here.</p>
+            <button onclick="logout()" class="btn">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        function showAuth(type) {
+            document.getElementById('auth-container').classList.add('show');
+            toggleForm(type);
+        }
+
+        function hideAuth() {
+            document.getElementById('auth-container').classList.remove('show');
+        }
+
+        function toggleForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const subText = document.getElementById('sub-text');
+
+            if (formType === 'signup') {
+                loginForm.classList.add('hidden');
+                signupForm.classList.remove('hidden');
+                subText.innerText = "Create your trainee account";
+            } else {
+                signupForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                subText.innerText = "Training Services Portal";
+            }
+        }
+
+        function logout() {
+            document.getElementById('dashboard').classList.remove('show');
+        }
+
+        // Functional login and signup using localStorage
+        document.getElementById('login-form').onsubmit = function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-pass').value;
+            
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                hideAuth();
+                document.getElementById('dashboard').classList.add('show');
+            } else {
+                alert('Invalid email or password');
+            }
+        };
+
+        document.getElementById('signup-form').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-pass').value;
+            
+            if (!name || !email || !password) {
+                alert('Please fill all fields');
+                return;
+            }
+            
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.find(u => u.email === email)) {
+                alert('Email already exists');
+                return;
+            }
+            
+            users.push({name, email, password});
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Account created successfully!');
+            toggleForm('login');
+        };
+    </script>
+
+</body>
+</html>
